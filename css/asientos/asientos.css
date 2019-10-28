@@ -1,0 +1,50 @@
+p.asiento{
+	color:#333333;
+	text-align:center;
+	font-family:Arial;
+}
+
+p.asiento:hover{
+	cursor:pointer;
+}
+
+img.asiento{
+	width: 38px;
+	height: 25px;
+}
+
+td.asiento{
+	padding-top:12px;
+}
+
+td.disponible{
+	background-image: url(./../../Images/Seating/25/seat_0.png);
+	background-repeat:no-repeat;
+	background-position: center center;
+}
+
+td.no-disponible{
+	background-image: url(./../../Images/Seating/25/seat_1.png);
+	background-repeat:no-repeat;
+	background-position: center center;
+}
+
+td.ocupado{
+	background-image: url(./../../Images/Seating/25/seat_5.png);
+	background-repeat:no-repeat;
+	background-position: center center;
+}
+
+td.discapacitado{
+	background-image: url(./../../Images/Seating/25/seat_4.png);
+	background-repeat:no-repeat;
+	background-position: center center;
+}
+
+.expandido{
+	width:100%;
+}
+
+.es-visible{
+	visibility:visible;
+}

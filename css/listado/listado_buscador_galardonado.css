@@ -1,0 +1,36 @@
+.expandido{
+	width:100%;
+}
+.asistencia-si{
+	background-color:#339933;
+}
+
+.ver{
+	cursor:pointer;
+}
+
+.asistencia-si:hover{
+	background-color:#53c653;
+	cursor:pointer;
+}
+
+td{
+	text-align:center;
+}
+
+.mostrar-mas{
+	font-family:Arial;
+	font-size:1em;
+	text-align:center;
+}
+.mostrar-mas:hover{
+	background-color:#eaeaea;
+	cursor:pointer;
+}
+.mostrar-mas:active{
+	background-color:#cecece;
+	cursor:pointer;
+}
+.centrado{
+	text-align:center;
+}

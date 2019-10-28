@@ -1,0 +1,64 @@
+.btn-expand{
+	width:100%;
+}
+
+.expandido{
+	width:100%;
+}
+
+.escondido{
+	display:none;
+}
+
+.estabilizado{
+	display:block;
+}
+
+.select-checkbox-fixed{
+	border-color:#d2d6de;
+	height:35px;
+}
+
+.espaciado{
+	box-sizing: border-box;
+	padding:5px;
+}
+
+.option-checkbox{
+	color:#333333;
+    font-weight: normal;
+}
+
+.multiselect {
+  width: 100%;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+	/*background-color: #d2d6de;*/
+	background-color:#1e90ff;
+	color:#ffffff;
+}

@@ -1,0 +1,866 @@
+body {
+    font-family: Arimo, Helvetica, Arial, sans-serif;
+    font-size: 10px;
+}
+
+.nombrecomplejo {
+    font-weight: bold;
+    font-size: 11px;
+    color: #ffffff;
+}
+
+td {
+    font-size: 10px;
+}
+
+th {
+    font-size: 10px;
+}
+
+.tituloscartelera {
+    font-size: 11px;
+    color: #ffffff;
+}
+
+.fondomedio {
+    background-image: url(/Cinepolis/Imagenes/FondoCarteleraMedio.gif);
+}
+
+select.cartelera {
+    font-size: 11px;
+    border-left-color: #ffcc00;
+    background: #ffffff;
+    border-bottom-color: #ffcc00;
+    color: #000000;
+    border-top-color: #ffcc00;
+    border-right-color: #ffcc00;
+}
+
+select {
+    font-size: 9px;
+    background: #d8d8d8;
+}
+
+textarea {
+    border-right: #ffffff 1px solid;
+    border-top: #ffffff 1px solid;
+    font-size: 11px;
+    background: #d8d8d8;
+    border-left: #ffffff 1px solid;
+    border-bottom: #ffffff 1px solid;
+}
+
+select {
+    border-right: #ffffff 1px solid;
+    border-top: #ffffff 1px solid;
+    font-size: 11px;
+    background: #d8d8d8;
+    border-left: #ffffff 1px solid;
+    border-bottom: #ffffff 1px solid;
+}
+
+.Oculto {
+    display: none;
+    visibility: hidden;
+}
+
+.Separado label {
+    padding-right: 15px;
+    padding-left: 1px;
+    padding-bottom: 0px;
+    vertical-align: middle;
+    padding-top: 0px;
+}
+
+.Derecha {
+    text-align: right;
+}
+
+input.radioBoton {
+    border-right: #ffffff 0px;
+    border-top: #ffffff 0px;
+    background: none transparent scroll repeat 0% 0%;
+    border-left: #ffffff 0px;
+    border-bottom: #ffffff 0px;
+    font-family: none;
+}
+
+.radioBoton input {
+    border-right: #ffffff 0px;
+    border-top: #ffffff 0px;
+    background: none transparent scroll repeat 0% 0%;
+    border-left: #ffffff 0px;
+    border-bottom: #ffffff 0px;
+    font-family: none;
+}
+
+.radio input {
+    border-right: #ffffff 0px;
+    border-top: #ffffff 0px;
+    background: none transparent scroll repeat 0% 0%;
+    border-left: #ffffff 0px;
+    border-bottom: #ffffff 0px;
+    font-family: none;
+}
+
+input.textarea {
+    border-right: #ffffff 1px solid;
+    border-top: #ffffff 1px solid;
+    font-size: 9px;
+    border-left: #ffffff 1px solid;
+    color: #000000;
+    border-bottom: #ffffff 1px solid;
+    background-color: #ffffff;
+}
+
+/*.textoAzulPeque?o {
+    font-weight: normal;
+    font-size: 9px;
+    color: #b9ddf0;
+}*/
+
+.textoAzul {
+    font-weight: normal;
+    font-size: 11px;
+    color: #b9ddf0;
+}
+
+.textoAzulBold {
+    font-weight: bold;
+    font-size: 11px;
+    color: #b9ddf0;
+}
+
+.textoPequenosGris {
+    font-size: 8px;
+    color: #cccccc;
+}
+
+.textoGris {
+    font-size: 9px;
+    color: #cccccc;
+}
+
+.textoAmarillo {
+    font-weight: normal;
+    font-size: 11px;
+    color: #f7c915;
+}
+
+.textoAmarilloBold {
+    font-weight: bold;
+    font-size: 11px;
+    color: #f7c915;
+}
+
+.textoNormalPequeno {
+    font-size: 9px;
+    color: #ffffff;
+}
+
+.textoNormalPequenoBold {
+    font-weight: bold;
+    font-size: 9px;
+    color: #ffffff;
+}
+
+.textoNormal {
+    font-size: 11px;
+    color: #ffffff;
+}
+
+.textoNormalBold {
+    font-weight: bold;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.textoNegroPeque?o {
+    font-size: 9px;
+    color: #000000;
+}
+
+.textoNegro {
+    font-size: 11px;
+    color: #000000;
+}
+
+.textoNegroBold {
+    font-weight: bold;
+    font-size: 11px;
+    color: #000000;
+}
+
+td.InicioCuadroAzul {
+    background-image: url('/Cinepolis/Imagenes/Fondos/FondoMuestraTop.gif');
+    background-repeat: no-repeat;
+}
+
+td.FinCuadroAzul {
+    background-image: url('/Cinepolis/Imagenes/Fondos/FondoMuestraBottom.gif');
+    background-repeat: no-repeat;
+}
+
+td.InicioCartelera {
+    background-image: url('/Cinepolis/Imagenes/Fondos/FondoCarteleraTop.gif');
+    background-repeat: no-repeat;
+}
+
+td.FinCartelera {
+    background-image: url('/Cinepolis/Imagenes/Fondos/FondoCarteleraBottom.gif');
+    background-repeat: no-repeat;
+}
+
+td.MedioCartelera {
+    background-image: url('/Cinepolis/Imagenes/Fondos/FondoCarteleraMedio.gif');
+}
+
+td.InicioCarteleraCH {
+    background-image: url('/Cinepolis/Imagenes/Fondos/FondoTchTop.gif');
+    background-repeat: no-repeat;
+}
+
+td.FinCarteleraCH {
+    background-image: url('/Cinepolis/Imagenes/Fondos/FondoTchC.gif');
+    background-repeat: no-repeat;
+}
+
+td.MedioCarteleraCH {
+    background-image: url('/Cinepolis/Imagenes/Fondos/FondoTchBottom.gif');
+}
+
+table.FondoTablaComplejo {
+    background-image: url('/Cinepolis/Imagenes/Fondos/FondoTablaComplejo.gif');
+}
+
+.tituloCartelera {
+    color: #f5b902;
+    font-size: 10px;
+}
+
+a.HorarioCartelera {
+    color: white;
+    font-weight: normal;
+    font-size: 11px;
+}
+
+a:visited.HorarioCartelera {
+    color: white;
+    font-weight: normal;
+    font-size: 11px;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~	STYLES ON visSelectSeats.aspx													  */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* -- Welcome text for loyalty members */
+
+.SeatPageWelcome {
+    font-size: 12px;
+    color: Black;
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* -- Giving a quick explanation to the user how to change their seats */
+.AppletExplanation {
+    font-size: 10px;
+    color: white;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* -- Giving a quick explanation to the user how to change their seats */
+.Legend {
+    font-size: 10px;
+    color: white;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* -- Allows you to put a background colour and border around the count down clock. */
+.LegendTable {
+    background-color: #FFFFFF;
+    border: solid 1px #29087B;
+}
+
+#divLegend div {
+    display: inline;
+    margin: 0 15px 0 0;
+}
+
+/* -- Border around the details table */
+.SeatsDetailsTableBorder {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #29087B;
+    border-bottom: none 1px #29087B;
+}
+
+/* -- Text below the applet with additional applet info */
+.AppletFooter {
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* -- used for javascript seatplan */
+.Screen-Container {
+}
+
+.Screen-Front {
+    background: url('images/seating/ScreenForSeating_450.png');
+    height: 46px;
+    width: 450px;
+    margin-top: 15px;
+}
+
+/*.Screen-Back {
+}*/
+
+.Screen-AreaName {
+    font-size: 17px;
+    color: #000000;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.Screen-AllAreas {
+    /*background: WindowFrame none repeat scroll 0 0;*/
+    overflow: auto;
+    width: 100%;
+}
+
+.Screen-AreaSeats {
+    position: relative;
+}
+
+div.SelectSeatDivs {
+	/*background-repeat:no-repeat;   background-position:bottom center;*/
+    line-height: 2em;
+}
+
+div.SelectSeatRows {
+    line-height: 2em;
+}
+
+p.SeatName {
+    position: absolute;
+    z-index: 1;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: Black;
+}
+
+p.RowDescription {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: Black;
+}
+
+img.SeatImage {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+#orderDetails #orderHeader {
+    padding: 0px 5px;
+}
+
+#orderDetails dl {
+    margin: 0;
+}
+
+#orderDetails dt {
+    clear: left;
+    float: left;
+    margin: 0;
+    display: block;
+}
+
+#orderDetails dd {
+    float: left;
+}
+
+#orderDetails .CinLabel {
+    width: 15%;
+}
+
+#orderDetails div div table {
+    width: 100%;
+}
+
+#orderDetails .SectionContainer {
+    padding: 0 0px 0px 0px;
+    clear: left;
+}
+
+#orderDetails .DetailsRow {
+    vertical-align: top;
+    text-align: left;
+    width: 75%;
+    font-style: normal;
+    color: #969ea9;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+}
+
+#orderDetails .DetailsRowAesthetics {
+    height: 2px;
+}
+
+#orderDetails .Price {
+    width: 20%;
+    max-width: 20%;
+    text-align: right;
+}
+
+#orderDetails .Points {
+    width: 15%;
+    max-width: 15%;
+    text-indent: 2px;
+}
+
+#orderDetails .orderDetailsDescription {
+    max-width: 40%;
+    width: 40%;
+}
+
+#orderDetails .OrderMisc {
+    width: 20%;
+    max-width: 20%;
+}
+
+#orderDetails .MovieSummary {
+    width: 70%;
+    float: left;
+}
+
+#orderDetails .SubTable {
+    margin-top: 5px;
+}
+
+#orderDetails .SubRow td {
+    padding-bottom: 10px;
+}
+
+.Indent {
+    text-indent: 10px;
+}
+
+#orderDetails #cartlinks {
+    text-align: right;
+    padding-bottom: 0;
+}
+
+.Left {
+    float: left;
+}
+
+.Right {
+    float: right;
+}
+
+.Clear {
+    clear: both;
+}
+
+.Bold {
+    font-weight: bold;
+}
+
+.GrandTotal {
+    font-weight: bold;
+}
+
+A.PrinterLink:link {
+    font-size: 11px;
+    color: #29087B;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+A.PrinterLink:visited {
+    font-size: 11px;
+    color: #29087B;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+A.PrinterLink:hover {
+    color: #CC0000;
+    text-decoration: underline;
+}
+
+.Price {
+    text-align: right;
+}
+
+.DetailsText {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* -- Defines what each ROW looks like in the user friendly error table */
+.ErrorRow {
+    height: 25px;
+}
+
+/* -- Defines what the TEXT looks like in the user friendly error table */
+.ErrorCell {
+    text-align: left;
+    text-indent: 0px;
+    font-size: 12px;
+    color: red;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.ErrorDiv {
+    text-align: left;
+    text-indent: 0px;
+    font-size: 12px;
+    color: red;
+    font-weight: bold;
+    font-style: normal;
+    width: 580px;
+}
+
+.TicketPageText, .PaymentText, .UnpaidWarningText, .ConfirmDetailsPickUp {
+    width: 580px;
+    font-style: normal;
+    color: #969ea9;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~	STYLES ON visSelectSeats.aspx													  */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* -- Welcome text for loyalty members */
+.SeatPageWelcome {
+    font-size: 12px;
+    color: #000000;
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* -- Giving a quick explanation to the user how to change their seats */
+.AppletExplanation {
+    font-size: 10px;
+    color: #000000;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* -- Giving a quick explanation to the user how to change their seats */
+.Legend {
+    font-size: 10px;
+    color: #000000;
+    font-weight: normal;
+    font-style: normal;
+    vertical-align: middle;
+}
+
+/* -- Allows you to put a background colour and border around the count down clock. */
+.LegendTable {
+    background-color: #FFFFFF;
+    border: solid 1px #29087B;
+}
+
+#divLegend div {
+    display: inline;
+    margin: 0 15px 0 0;
+}
+
+/* -- Border around the details table */
+.SeatsDetailsTableBorder {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #29087B;
+    border-bottom: none 1px #29087B;
+}
+
+/* -- Text below the applet with additional applet info */
+.AppletFooter {
+    font-size: 12px;
+    color: #000000;
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* -- used for javascript seatplan */
+.Screen-Container {
+}
+
+.Screen-Front {
+    background: url( 'images/seating/ScreenForSeating_450.png' );
+    height: 46px;
+    width: 450px;
+    margin-top: 15px;
+}
+
+.Screen-Back {
+}
+
+.Screen-AreaName {
+    font-size: 17px;
+    color: #000000;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.Screen-AllAreas {
+    background: #FFFFFF none repeat scroll 0 0;
+    overflow: auto;
+    width: 100%;
+    position: relative;
+}
+
+.Screen-AreaSeats {
+    position: relative;
+}
+
+div.SelectSeatDivs {
+	/*background-repeat:no-repeat;   background-position:bottom center;*/
+    line-height: 2em;
+}
+
+div.SelectSeatRows {
+    line-height: 2em;
+}
+
+.Seating-Area {
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    border-collapse: collapse;
+}
+
+.Seating-Area div {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.Seating-Area tr, td {
+    padding: 0px;
+    margin: 0px;
+    border: 0;
+}
+
+.Seating-Area img {
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    cursor: pointer;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.Seating-AreaName {
+    font-size: 17px;
+    color: #000000;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.Seating-Area p {
+    position: absolute;
+    z-index: 1;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    font-size: 11px;
+    color: black;
+    display: table-cell;
+    cursor: pointer;
+}
+
+.Seating-RowLabelContainer {
+    height: 100%;
+    float: left;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 15px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.Seating-RowLabelContainer > table {
+    position: absolute;
+    width: 100%;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+}
+
+.Seating-RowLabel {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.Seating-RowLabelContainer div {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+img.SeatImage {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~ STYLES USED FOR THE SEATING CONTROL          */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.Seating-Control {
+    margin: 5px auto;
+    max-width: 700px;
+    overflow: auto;
+    position: relative;
+    width: 100% !important;
+}
+
+.Seating-Control > div {
+    overflow: visible;
+    width: 100% !important;
+}
+
+.Seating-Theatre {
+    position: relative;
+    display: inline-block;
+    float: left;
+}
+
+.Seating-Container {
+    position: relative;
+    visibility: hidden;
+    margin: 0 auto;
+}
+
+.Seating-Popup {
+    display: none;
+    z-index: 9999;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    color: White;
+    font-style: inherit;
+    cursor: pointer;
+    background-color: #960423;
+    font-size: 13px;
+    font-weight: bold;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 80px;
+}
+
+.Seating-PopupMessage {
+    clear: both;
+    height: 80px;
+    position: relative;
+}
+
+.Seating-Screen {
+    position: relative;
+    height: 20px;
+    margin: 0 auto;
+}
+
+.Seating-Screen img {
+    height: 100%;
+}
+
+.ticketsSelect {
+    overflow: auto;
+}
+
+/* Estilos mejoras a la selección móvil */
+
+.respon-mov {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 8%;
+    position: relative;
+    width: 100%;
+}
+.nav-mov {
+    background-color: #0B5BA1;
+    display: none;
+    height: 100%;
+    position: absolute;
+    width: 26px;
+    z-index: 99;
+}
+.nav-mov > span {
+    background: url("http://cinepolis.com/HTML/otros/oscars14/imagenes/navegacion-mov.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    height: 12px;
+    left: 50%;
+    margin-left: -5px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+    width: 8px;
+}
+.nav-mov.izquierda {
+    left: 0;
+}
+.nav-mov.derecha {
+    right: 0;
+}
+.nav-mov.derecha > span {
+    background-position: -8px 0;
+}
+
+@media screen and (max-width: 680px){
+    .Seating-Control > div {
+        overflow: auto;
+        position: relative;
+    }
+    .nav-mov {
+        display: block;
+    }
+    .respon-mov {
+        position: absolute;
+        width: 95.5%
+    }
+}
+
+.hola {
+    display: none;
+}
+

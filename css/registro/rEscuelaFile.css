@@ -1,0 +1,14 @@
+.btn-expand{
+	width:100%;
+}
+
+table.invisible{
+	display: none;
+}
+
+table.expand-table{
+	width:100%;
+}
+tr.expand-table{
+	width:100%;
+}
