@@ -42,15 +42,15 @@ class EnviarNew
 				//Whether to use SMTP authentication
 				$mail->SMTPAuth = true;
 				//Username to use for SMTP authentication - use full email address for gmail
-				$mail->Username = "heatmap.quanthink@gmail.com";
+				$mail->Username = "foo@email.com";
 				//Password to use for SMTP authentication
 				$mail->Password = "mot_de_passe";
 				//Set who the message is to be sent from
-				$mail->setFrom('heatmap.quanthink@gmail.com', 'Notificacion Ceremonia de Premiacion');
+				$mail->setFrom('foo@email.com', 'Notificacion Ceremonia de Premiacion');
 				//Set an alternative reply-to address
-				$mail->addReplyTo('heatmap.quanthink@gmail.com', 'Gestion Empresarial Quanthink');
+				$mail->addReplyTo('foo@email.com', 'Gestion Empresarial');
 				//Set who the message is to be sent to
-				$mail->addAddress($correo, 'JackCloudman');
+				$mail->addAddress($correo, 'remitent');
 				//Set the subject line
 				$mail->Subject = $titulo;
 				//Read an HTML message body from an external file, convert referenced images to embedded,
