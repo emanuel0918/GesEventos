@@ -44,7 +44,7 @@ class EnviarNew
 				//Username to use for SMTP authentication - use full email address for gmail
 				$mail->Username = "heatmap.quanthink@gmail.com";
 				//Password to use for SMTP authentication
-				$mail->Password = "HEATMAP00";
+				$mail->Password = "mot_de_passe";
 				//Set who the message is to be sent from
 				$mail->setFrom('heatmap.quanthink@gmail.com', 'Notificacion Ceremonia de Premiacion');
 				//Set an alternative reply-to address
