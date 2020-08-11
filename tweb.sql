@@ -724,7 +724,7 @@ call sp_crearAuditorio('auditorio',17,50);
 call sp_crearAsiento('auditorio','A',2,1);
 call sp_crearAsiento('auditorio','A',3,1);
 call sp_ocuparAsiento('BAEE980918P68','auditorio','A',1);
-call sp_ocuparAsiento('RFCJUAN','auditorio','A',3);
+call sp_ocuparAsiento('RFCFOO','auditorio','A',3);
 call sp_borrarAuditorio('auditorio');
 
 */
