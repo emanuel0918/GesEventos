@@ -1,5 +1,5 @@
 # GesEventos
-This software was developed to manage the prices of the Polytechnic Merit Recognitions.
+This software was developed to manage the prices of the Polytechnic Merit Awards.
 
 FrontEnd: HTML, CSS, Bootstrap, JS, JQUERY and AJAX.
 
