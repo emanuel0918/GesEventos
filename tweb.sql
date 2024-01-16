@@ -10,15 +10,15 @@ use tweb;
 drop table if exists galardonado;
 create table galardonado (
 idgal int not null,
-nombre nvarchar (150),
-primer_apellido nvarchar (150),
-segundo_apellido nvarchar (150),
-rfc nvarchar(14) not null,
+nombre VARCHAR (150),
+primer_apellido VARCHAR (150),
+segundo_apellido VARCHAR (150),
+rfc VARCHAR(14) not null,
 edad int not null,
 sexo int(1) default 0 not null,
-correo nvarchar(120),
-telefono nvarchar(15),
-observaciones nvarchar(300),
+correo VARCHAR(120),
+telefono VARCHAR(15),
+observaciones VARCHAR(300),
 discapacidad int(1) default 0 not null,
 idescuela int not null,
 idrec int not null,
@@ -28,26 +28,26 @@ primary key(idgal));
 drop table if exists staff;
 create table staff (
 idstaff int not null,
-usuario nvarchar(50) not null,
+usuario VARCHAR(50) not null,
 pasword varchar(32) not null,
-nombre nvarchar (90) not null,
+nombre VARCHAR (90) not null,
 privilegio int(2) default 0 not null,
-correo nvarchar(140) not null,
-telefono nvarchar(15),
+correo VARCHAR(140) not null,
+telefono VARCHAR(15),
 primary key(idstaff));
 
 
 drop table if exists reconocimiento;
 create table reconocimiento (
 idrec int not null,
-reconocimiento nvarchar (90) not null,
+reconocimiento VARCHAR (90) not null,
 primary key(idrec));
 
 
 drop table if exists escuela;
 create table escuela (
 idescuela int not null,
-escuela nvarchar(150) not null,
+escuela VARCHAR(150) not null,
 primary key(idescuela));
 
 
@@ -75,13 +75,13 @@ idgal int not null);
 drop table if exists auditorio;
 create table auditorio(
 idauditorio int not null,
-nombre nvarchar(100) not null,
+nombre VARCHAR(100) not null,
 primary key (idauditorio));
 
 drop table if exists fila;
 create table fila(
 idfila int not null,
-fila nvarchar(15) not null,
+fila VARCHAR(15) not null,
 idauditorio int not null,
 primary key (idfila));
 
@@ -107,8 +107,10 @@ alter table rel_asiento_galardonado add foreign key (idgal) references galardona
 
 drop function if exists f_Login; 
 delimiter //
-create function f_Login (p_usuario nvarchar(50), p_password varchar(32)) returns int(1)
+create function f_Login (p_usuario VARCHAR(50), p_password varchar(32)) returns int(1)
+deterministic
 begin
+
 	declare confirm int(1);
 	set confirm = (select count(*) from staff where usuario=p_usuario and pasword=p_password);
 	return confirm;
@@ -119,8 +121,10 @@ delimiter ;
 
 drop function if exists f_tipoUsuario; 
 delimiter //
-create function f_tipoUsuario (p_usuario nvarchar(50)) returns int(1)
+create function f_tipoUsuario (p_usuario VARCHAR(50)) returns int(1)
+deterministic
 begin
+
 	declare tipo int(1);
 	set tipo = (select privilegio from staff where usuario=p_usuario);
 	return tipo;
@@ -131,8 +135,10 @@ delimiter ;
 
 drop function if exists f_idEscuela; 
 delimiter //
-create function f_idEscuela (p_escuela nvarchar(150)) returns int
+create function f_idEscuela (p_escuela VARCHAR(150)) returns int
+deterministic
 begin
+
 	declare idexiste int;
 	declare id_escuela int;
 	set idexiste = (select idescuela from escuela where escuela=p_escuela);
@@ -152,8 +158,10 @@ delimiter ;
 
 drop function if exists f_idReconocimiento; 
 delimiter //
-create function f_idReconocimiento (p_recon nvarchar(90)) returns int
+create function f_idReconocimiento (p_recon VARCHAR(90)) returns int
+deterministic
 begin
+
 	declare idexiste int;
 	declare id_recon int;
 	set idexiste = (select idrec from reconocimiento where reconocimiento=p_recon);
@@ -174,8 +182,10 @@ delimiter ;
 
 drop function if exists f_idAuditorio; 
 delimiter //
-create function f_idAuditorio (p_auditorio nvarchar(100)) returns int
+create function f_idAuditorio (p_auditorio VARCHAR(100)) returns int
+deterministic
 begin
+
 	declare idexiste int;
 	declare id_auditorio int;
 	set idexiste = (select idauditorio from auditorio where nombre=p_auditorio);
@@ -196,8 +206,10 @@ delimiter ;
 
 drop function if exists f_anchoAuditorio; 
 delimiter //
-create function f_anchoAuditorio (p_auditorio nvarchar(100)) returns int
+create function f_anchoAuditorio (p_auditorio VARCHAR(100)) returns int
+deterministic
 begin
+
 	declare ancho int;
 	declare ancho_auxiliar int;
 	declare id_fila int;
@@ -225,8 +237,10 @@ delimiter ;
 
 drop function if exists f_galardonadoValido;
 delimiter //
-create function f_galardonadoValido (p_rfc nvarchar(14)) returns int
+create function f_galardonadoValido (p_rfc VARCHAR(14)) returns int
+deterministic
 begin
+
 	declare id_gal int;
 	declare validado int;
     set id_gal =(select idgal from galardonado where rfc=p_rfc);
@@ -248,8 +262,10 @@ delimiter ;
 
 drop function if exists f_obtenerEdadRFC; 
 delimiter //
-create function f_obtenerEdadRFC (p_rfc nvarchar(14)) returns int
+create function f_obtenerEdadRFC (p_rfc VARCHAR(14)) returns int
+deterministic
 begin
+
 	declare edad int;
     declare actual date;
     declare nacimiento date;
@@ -286,10 +302,12 @@ delimiter ;
 
 drop procedure if exists sp_altaStaff;
 delimiter //
-create procedure sp_altaStaff (in p_usuario nvarchar(90), in p_pasword varchar(32),
-in p_nombre nvarchar(90),in p_privilegio int(2), in p_correo nvarchar(140),
-in p_telefono nvarchar(15))
+create procedure sp_altaStaff (in p_usuario VARCHAR(90), in p_pasword varchar(32),
+in p_nombre VARCHAR(90),in p_privilegio int(2), in p_correo VARCHAR(140),
+in p_telefono VARCHAR(15))
+deterministic
 begin
+
 	declare id_staff int;
     set id_staff=(select idstaff from staff where usuario=p_usuario);
     if id_staff is null then
@@ -309,9 +327,11 @@ delimiter ;
 
 drop procedure if exists sp_editarStaff;
 delimiter //
-create procedure sp_editarStaff (in p_usuario nvarchar(90), in p_pasword varchar(32),
-in p_nombre nvarchar(90), in p_correo nvarchar(140),in p_telefono nvarchar(15))
+create procedure sp_editarStaff (in p_usuario VARCHAR(90), in p_pasword varchar(32),
+in p_nombre VARCHAR(90), in p_correo VARCHAR(140),in p_telefono VARCHAR(15))
+deterministic
 begin
+
 	declare id_staff int;
     set id_staff=(select idstaff from staff where usuario=p_usuario);
     if id_staff is not null then
@@ -325,8 +345,10 @@ delimiter ;
 
 drop procedure if exists sp_borrarStaff;
 delimiter //
-create procedure sp_borrarStaff (in p_usuario nvarchar(90))
+create procedure sp_borrarStaff (in p_usuario VARCHAR(90))
+deterministic
 begin
+
 	declare id_staff int;
     set id_staff=(select idstaff from staff where usuario=p_usuario);
     delete from staff where idstaff=id_staff;
@@ -338,11 +360,13 @@ delimiter ;
 
 drop procedure if exists sp_altaGalardonado;
 delimiter //
-create procedure sp_altaGalardonado (in p_rfc nvarchar(14), in p_nombre nvarchar(150),
-in p_primer_apellido nvarchar(150), in p_segundo_apellido nvarchar(150), in p_sexo int(1),
-in p_observaciones nvarchar(300), in p_correo nvarchar(120), in p_escuela nvarchar(150),
-in p_telefono nvarchar(15),in p_reconocimiento nvarchar(90), in p_discapacidad int(1))
+create procedure sp_altaGalardonado (in p_rfc VARCHAR(14), in p_nombre VARCHAR(150),
+in p_primer_apellido VARCHAR(150), in p_segundo_apellido VARCHAR(150), in p_sexo int(1),
+in p_observaciones VARCHAR(300), in p_correo VARCHAR(120), in p_escuela VARCHAR(150),
+in p_telefono VARCHAR(15),in p_reconocimiento VARCHAR(90), in p_discapacidad int(1))
+deterministic
 begin
+
 	declare id_gal int;
     declare id_escuela int;
     declare id_rec int;
@@ -383,11 +407,13 @@ delimiter ;
 
 drop procedure if exists sp_editarGalardonado;
 delimiter //
-create procedure sp_editarGalardonado (in p_rfc nvarchar(14), in p_nombre nvarchar(150),
-in p_primer_apellido nvarchar(150), in p_segundo_apellido nvarchar(150), in p_sexo int(1),
-in p_correo nvarchar(120), in p_telefono nvarchar(15), in p_observaciones nvarchar(300),
-in p_discapacidad int(1),in p_escuela nvarchar(150),in p_reconocimiento nvarchar(90))
+create procedure sp_editarGalardonado (in p_rfc VARCHAR(14), in p_nombre VARCHAR(150),
+in p_primer_apellido VARCHAR(150), in p_segundo_apellido VARCHAR(150), in p_sexo int(1),
+in p_correo VARCHAR(120), in p_telefono VARCHAR(15), in p_observaciones VARCHAR(300),
+in p_discapacidad int(1),in p_escuela VARCHAR(150),in p_reconocimiento VARCHAR(90))
+deterministic
 begin
+
 	declare id_gal int;
 	declare id_escuela int;
 	declare id_recon int;
@@ -419,8 +445,10 @@ delimiter ;
 
 drop procedure if exists sp_borrarGalardonado;
 delimiter //
-create procedure sp_borrarGalardonado (in p_rfc nvarchar(14))
+create procedure sp_borrarGalardonado (in p_rfc VARCHAR(14))
+deterministic
 begin
+
 	declare id_gal int;
 	declare id_asiento int;
     set id_gal=(select idgal from galardonado where rfc=p_rfc);
@@ -437,7 +465,9 @@ delimiter ;
 drop procedure if exists sp_borrarGalardonadoPorId;
 delimiter //
 create procedure sp_borrarGalardonadoPorId (in id_gal int)
+deterministic
 begin
+
 	declare id_asiento int;
     set id_asiento=(select idasiento from rel_asiento_galardonado where idgal=id_gal);
     update asiento set ocupado=0 where idasiento=id_asiento;
@@ -451,8 +481,10 @@ delimiter ;
 
 drop procedure if exists sp_borrarEscuela;
 delimiter //
-create procedure sp_borrarEscuela (in p_escuela nvarchar(150))
+create procedure sp_borrarEscuela (in p_escuela VARCHAR(150))
+deterministic
 begin
+
 	declare id_escuela int;
 	declare id_gal int;
     set id_escuela=(select f_idEscuela(p_escuela));
@@ -469,8 +501,10 @@ delimiter ;
 
 drop procedure if exists sp_borrarReconocimiento;
 delimiter //
-create procedure sp_borrarReconocimiento (in p_reconocimiento nvarchar(90))
+create procedure sp_borrarReconocimiento (in p_reconocimiento VARCHAR(90))
+deterministic
 begin
+
 	declare id_recon int;
 	declare id_gal int;
     set id_recon=(select f_idReconocimiento(p_reconocimiento));
@@ -488,8 +522,10 @@ delimiter ;
 
 drop procedure if exists sp_guardarTokenGalardonado;
 delimiter //
-create procedure sp_guardarTokenGalardonado (in p_rfc nvarchar(14),in p_tk varchar(21))
+create procedure sp_guardarTokenGalardonado (in p_rfc VARCHAR(14),in p_tk varchar(21))
+deterministic
 begin
+
 	declare id_gal int;
 	declare existe int(1);
     set id_gal =(select idgal from galardonado where rfc=p_rfc);
@@ -506,8 +542,10 @@ delimiter ;
 
 drop procedure if exists sp_pasarAsistencia;
 delimiter //
-create procedure sp_pasarAsistencia (in p_usuario nvarchar(50), in p_tk varchar(21))
+create procedure sp_pasarAsistencia (in p_usuario VARCHAR(50), in p_tk varchar(21))
+deterministic
 begin
+
 	declare id_staff int;
 	declare id_gal int;
     declare id_ast int;
@@ -531,8 +569,10 @@ delimiter ;
 
 drop procedure if exists sp_pasarAsistenciaRFC;
 delimiter //
-create procedure sp_pasarAsistenciaRFC (in p_usuario nvarchar(50),in p_rfc nvarchar(14))
+create procedure sp_pasarAsistenciaRFC (in p_usuario VARCHAR(50),in p_rfc VARCHAR(14))
+deterministic
 begin
+
 	declare id_staff int;
 	declare id_gal int;
     declare id_ast int;
@@ -551,9 +591,11 @@ delimiter ;
 
 drop procedure if exists sp_crearAsiento;
 delimiter //
-create procedure sp_crearAsiento (in p_auditorio nvarchar(100),
-in p_fila nvarchar(15), in p_asiento int, in p_state int(1))
+create procedure sp_crearAsiento (in p_auditorio VARCHAR(100),
+in p_fila VARCHAR(15), in p_asiento int, in p_state int(1))
+deterministic
 begin
+
 	declare id_auditorio int;
 	declare id_fila int;
     declare id_asiento int;
@@ -589,9 +631,11 @@ delimiter ;
 
 drop procedure if exists sp_ocuparAsiento;
 delimiter //
-create procedure sp_ocuparAsiento (in p_rfc nvarchar(14),in p_auditorio nvarchar(100),
-in p_fila nvarchar(15), in p_asiento int)
+create procedure sp_ocuparAsiento (in p_rfc VARCHAR(14),in p_auditorio VARCHAR(100),
+in p_fila VARCHAR(15), in p_asiento int)
+deterministic
 begin
+
 	declare id_gal int;
 	declare id_auditorio int;
 	declare id_fila int;
@@ -628,8 +672,10 @@ delimiter ;
 
 drop procedure if exists sp_crearAuditorio;
 delimiter //
-create procedure sp_crearAuditorio (in p_auditorio nvarchar(100), in p_filas int, in p_asientos int)
+create procedure sp_crearAuditorio (in p_auditorio VARCHAR(100), in p_filas int, in p_asientos int)
+deterministic
 begin
+
 	declare i int;
 	declare j int;
 	call sp_borrarAuditorio(p_auditorio);
@@ -649,8 +695,10 @@ delimiter ;
 
 drop procedure if exists sp_borrarAuditorio;
 delimiter //
-create procedure sp_borrarAuditorio (in p_auditorio nvarchar(100))
+create procedure sp_borrarAuditorio (in p_auditorio VARCHAR(100))
+deterministic
 begin
+
 	declare id_auditorio int;
 	declare id_fila int;
 	declare id_asiento int;
@@ -742,6 +790,7 @@ use tweb;
 use tweb;
 use tweb;
 use tweb;
+
 
 
 
